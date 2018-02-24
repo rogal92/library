@@ -1,7 +1,6 @@
 package com.kodilla.library.controller;
 
 
-import com.kodilla.library.domain.BookPiece;
 import com.kodilla.library.domain.BookPieceDto;
 import com.kodilla.library.mapper.BookPieceMapper;
 import com.kodilla.library.service.DbService;
@@ -16,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("v1/bookPiece")
 public class BookPieceController {
-    @Autwired
+    @Autowired
     private DbService dbService;
 
     @Autowired
@@ -28,14 +27,14 @@ public class BookPieceController {
     }
     @RequestMapping(method = RequestMethod.GET,value = "getBookPiece/{id}")
     public BookPieceDto getBookPiece(@PathVariable("id")long bookPieceId) {
-        return bookPieceMapper.mapToBookPieceDtoList(dbService.getBookPieceById(bookPieceId));
+        return bookPieceMapper.mapToBookPieceDto(dbService.getBookPieceById(bookPieceId));
     }
     @RequestMapping(method = RequestMethod.PUT,value = "getBookPiece/{status}")
-    public BookPieceDto updateBookPieceStatus(@PathVariable("status") BookPiece status) {
-        return bookPieceMapper.bookPieceDto(dbService.statusBookPiece(status.getBookStatus()));
+    public BookPieceDto updateBookPieceStatus(@PathVariable("status") BookPieceDto status) {
+        return bookPieceMapper.mapToBookPieceDto(dbService.updateBookPieceStatus(bookPieceMapper.mapToBookPiece(status)));
     }
     @RequestMapping(method = RequestMethod.DELETE,value = "deleteBookPiece/{id}")
         public void deleteBookPiece(@PathVariable("id")Long bookPieceId) {
-        bookPieceMapper.bookPieceDto(dbService.deleteBookPiece(bookPieceId));
+        dbService.deleteBookPieceById(bookPieceId);
     }
 }

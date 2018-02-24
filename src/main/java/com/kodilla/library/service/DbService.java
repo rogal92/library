@@ -14,11 +14,13 @@ import com.kodilla.library.repository.RentalRepository;
 import com.kodilla.library.repository.TitleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.awt.print.Book;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @Component
 public class  DbService {
 
@@ -43,8 +45,8 @@ public class  DbService {
     public Reader saveReader(final Reader reader) {
         return readerRepository.save(reader);
     }
-    public Reader deleteReaderById(final Long readerId) {
-        return readerRepository.deleteById(readerId);
+    public void deleteReaderById(final Long readerId) {
+        readerRepository.deleteById(readerId);
     }
 
     public List<Title> getAllTitles() {
@@ -68,15 +70,14 @@ public class  DbService {
     public BookPiece saveBookPiece(final BookPiece bookPiece) {
         return bookPieceRepository.save(bookPiece);
     }
-    public BookPiece statusBookPiece(BookPiece bookPiece) {
-        return bookPieceRepository.status(bookPiece.getBookStatus());
+    public BookPiece updateBookPieceStatus(BookPiece bookPiece) {
+        BookPiece bookPieceFromDb = bookPieceRepository.findById(bookPiece.getId()).orElseThrow(() -> new IllegalArgumentException());
+        bookPieceFromDb.setBookStatus(bookPiece.getBookStatus());
+        return bookPieceFromDb;
     }
-    public BookPiece deleteBookPiece(final Long bookPieceId) {
-        return bookPieceRepository.deleteBookPieceById(bookPieceId);
+    public void deleteBookPieceById(final Long bookPieceId) {
+        bookPieceRepository.deleteById(bookPieceId);
     }
-
-
-
     public List<Rental> getAllRentals() {
         return rentalRepository.findAll();
     }

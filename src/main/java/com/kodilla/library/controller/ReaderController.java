@@ -6,7 +6,6 @@ import com.kodilla.library.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -33,7 +32,7 @@ public class ReaderController {
     }
     @RequestMapping(method = RequestMethod.DELETE,value = "deleteReader/{id}")
     public void deleteReader(@PathVariable("id") Long readerId) {
-        dbService.deleteReaderById(dbService.getReaderById(readerId));
+        dbService.deleteReaderById(readerId);
     }
     @RequestMapping(method = RequestMethod.PUT,value = "updateReader")
     public ReaderDto updateReader(@RequestBody ReaderDto readerDto) {

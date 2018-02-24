@@ -15,7 +15,7 @@ public class BookPieceMapper {
                 bookPieceDto.getTitleId(),
                 bookPieceDto.getBookStatus());
     }
-    public BookPieceDto bookPieceDto(final BookPiece bookPiece) {
+    public BookPieceDto mapToBookPieceDto(final BookPiece bookPiece) {
         return new BookPieceDto(
                 bookPiece.getId(),
                 bookPiece.getTitleId(),

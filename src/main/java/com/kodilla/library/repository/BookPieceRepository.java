@@ -17,9 +17,4 @@ public interface BookPieceRepository extends CrudRepository<BookPiece, Long> {
     @Override
     BookPiece save(BookPiece bookPiece);
 
-    @Override
-    BookPiece status(BookPiece bookPiece);
-
-    @Override
-    BookPiece deleteBookPieceById(Long id);
 }

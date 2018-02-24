@@ -5,8 +5,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class BookPieceDto implements BookPieceInterface {
+public class BookPieceDto{
     private long id;
     private long titleId;
-    private STATUS bookStatus;
+    private BookPieceStatus  bookStatus;
 }

@@ -33,7 +33,7 @@ public class RentalController {
     public void createRental (RentalDto rentalDto) {}
 
     @RequestMapping(method = RequestMethod.DELETE,value = "deleteRental/{id}")
-    public RentalDto deleteRental(@PathVariable("id") Long rentalId) {
-        return dbService.deleteRentalById(dbService.getRentalById(rentalId));
+    public void deleteRental(@PathVariable("id") Long rentalId) {
+        dbService.deleteRentalById(rentalId);
     }
 }

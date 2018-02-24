@@ -35,6 +35,6 @@ public class TitleController {
 
     @RequestMapping(method = RequestMethod.DELETE,value = "deleteTitle/{id}")
     public void deleteTitleById(@PathVariable("id") Long titleId) {
-        return service.deleteRentalById(service.deleteRentalById(titleId));
+        service.deleteRentalById(titleId);
     }
 }
