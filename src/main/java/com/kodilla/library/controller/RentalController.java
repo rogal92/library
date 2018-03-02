@@ -32,8 +32,8 @@ public class RentalController {
     @RequestMapping(method = RequestMethod.POST,value = "createRental",consumes = MimeTypeUtils.APPLICATION_JSON_VALUE)
     public void createRental (RentalDto rentalDto) {}
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "deleteRental/{id}")
-    public void deleteRental(@PathVariable("id") Long rentalId) {
-        dbService.deleteRentalById(rentalId);
-    }
+//    @RequestMapping(method = RequestMethod.DELETE,value = "deleteRental/{id}")
+//    public void deleteRentalById(@PathVariable("id") Long rentalId) {
+//        dbService.deleteRentalById(rentalId);
+//    }
 }

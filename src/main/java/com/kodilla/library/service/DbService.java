@@ -87,7 +87,7 @@ public class  DbService {
     public Rental saveRental(final Rental rental) {
         return rentalRepository.save(rental);
     }
-    public Rental deleteRentalById(final Long rentalId) {
-        return rentalRepository.deleteRentalById(rentalId);
-    }
+//    public Rental deleteRentalById(final Long rentalId) {
+//        return rentalRepository.deleteRentalById(rentalId);
+//    }
  }

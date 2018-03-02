@@ -2,7 +2,6 @@ package com.kodilla.library.mapper;
 
 import com.kodilla.library.domain.Title;
 import com.kodilla.library.domain.TitleDto;
-import com.sun.xml.internal.bind.v2.util.CollisionCheckStack;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

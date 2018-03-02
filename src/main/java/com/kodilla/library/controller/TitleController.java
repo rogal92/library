@@ -33,8 +33,8 @@ public class TitleController {
     @RequestMapping(method = RequestMethod.POST,value = "createTitle",consumes = MimeTypeUtils.APPLICATION_JSON_VALUE)
     public void createTitle(TitleDto titleDto) {}
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "deleteTitle/{id}")
-    public void deleteTitleById(@PathVariable("id") Long titleId) {
-        service.deleteRentalById(titleId);
-    }
+//    @RequestMapping(method = RequestMethod.DELETE,value = "deleteTitle/{id}")
+//    public void deleteTitleById(@PathVariable("id") Long titleId) {
+//        service.deleteRentalById(titleId);
+//    }
 }
