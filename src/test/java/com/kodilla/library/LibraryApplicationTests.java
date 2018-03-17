@@ -5,6 +5,7 @@ import com.kodilla.library.repository.BookPieceRepository;
 import com.kodilla.library.repository.ReaderRepository;
 import com.kodilla.library.repository.RentalRepository;
 import com.kodilla.library.repository.TitleRepository;
+import javafx.application.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(
 		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-		classes = LibraryApplication.class)
+		classes = Application.class)
 @AutoConfigureMockMvc
 @TestPropertySource(
 		locations = "classpath:application-integrationtest.properties")
