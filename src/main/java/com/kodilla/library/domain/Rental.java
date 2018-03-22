@@ -17,7 +17,6 @@ public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long bookPieceId;
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long readerId;
     @Column(name = "rentalDate")

@@ -21,7 +21,6 @@ public class BookPiece {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long titleId;
     @Column(name = "bookStatus")
